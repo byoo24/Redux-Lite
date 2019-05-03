@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <header>
+      <% if logged_in?%>
+        <h1>HELLO <%=current_user.username%></h1>
+      <%else%>
+        <a href='<%=new_user_url%>'>Sign UP</a>
+      <%end%>
+    </header>
     <%= yield %>
   </body>
 </html>
